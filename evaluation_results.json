@@ -1,0 +1,20 @@
+{
+    "ChatGPT": {
+        "average_similarity": 0.2981673951210547,
+        "average_bleu": 0.11497254526151605,
+        "average_rouge1": 0.40082410322007317,
+        "average_rougeL": 0.35458249085052884
+    },
+    "Rag": {
+        "average_similarity": 0.20585387267285693,
+        "average_bleu": 0.03714516803392624,
+        "average_rouge1": 0.2400950072043854,
+        "average_rougeL": 0.19656514703981376
+    },
+    "ChatGPT35": {
+        "average_similarity": 0.21098969342798596,
+        "average_bleu": 0.030402445047212116,
+        "average_rouge1": 0.299706021437032,
+        "average_rougeL": 0.2468716319229348
+    }
+}

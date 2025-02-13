@@ -1,0 +1,10 @@
+### `requirements.txt`
+
+langchain
+langchain_openai
+langchain_community
+openai
+pypdf
+chromadb
+
+
