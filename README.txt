@@ -21,10 +21,15 @@ venv\Scripts\activate     # für Windows
 pip install -r requirements.txt
 
 ##setze den OpenAI Schlüssel
-export OPENAI_API_KEY="dein_api_schluessel"  # für Unix/macOS
+export OPENAI_API_KEY= "dein_api_schluessel" # für Unix/macOS
 set OPENAI_API_KEY="dein_api_schluessel"     # für Windows
 
+## Die Zeile os.environ["OPENAI_API_KEY"] = "your_openai_api_key" ggf auskommentieren bei Windows und den key dort einfügen
+
+
 ##Stelle sicher, dass das Verzeichnis mit den PDF-Dokumenten korrekt angegeben wurde.
+
+
 
 ##Führe das Skript aus:
 

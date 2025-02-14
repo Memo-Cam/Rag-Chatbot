@@ -8,7 +8,8 @@ from langchain_openai.llms import OpenAI
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
 
-# Logging konfigurieren
+#os.environ["OPENAI_API_KEY"] = "your_openai_api_key" #ggf auskommentieren bei Windows. 
+
 logging.basicConfig(level=logging.DEBUG)  # Temporär auf DEBUG setzen für detailliertes Logging
 
 def load_environment_variables():
@@ -111,7 +112,8 @@ def answer_question(qa_chain, question, quote_mode=False):
 def main():
     try:
         openai_api_key = load_environment_variables()
-        pdf_dir = "/home/mehmet/Dokumente/rag_chatbot/chatbot/pdfs/"    # Pfad zu den PDF-Dateien bitte Anpassen
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        pdf_dir = os.path.join(script_dir, "pdfs")        
         split_docs = load_and_split_documents(pdf_dir)
         embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
         vector_store = create_vector_store(split_docs, embeddings)

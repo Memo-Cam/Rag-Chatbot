@@ -1,3 +1,4 @@
+import os
 import tkinter as tk
 from tkinter import scrolledtext
 from tkinter import ttk
@@ -17,9 +18,9 @@ class ChatbotApp(tk.Tk):
         self.geometry("800x600")
 
         self.style = ttk.Style(self)
-        self.style.theme_use('clam')  # Verwenden eines modernen Themas
-
-        self.pdf_dir = "/home/mehmet/Dokumente/rag_chatbot/chatbot/pdfs/"# Pfad zu den PDF-Dateien bitte Anpassen
+        self.style.theme_use('clam')  
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        self.pdf_dir = os.path.join(script_dir, "pdfs")
         self.openai_api_key = load_environment_variables()
         self.split_docs = load_and_split_documents(self.pdf_dir)
         self.vector_store = create_vector_store(self.split_docs, OpenAIEmbeddings(openai_api_key=self.openai_api_key))
